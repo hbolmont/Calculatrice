@@ -7,6 +7,7 @@ class QPushButton;
 class Fenetre : public QWidget {
     public :
         Fenetre(QWidget * parent = nullptr);
+
     private :
         QPushButton * m_boutonplus;
         QPushButton * m_boutonmoins;

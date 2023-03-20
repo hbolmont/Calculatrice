@@ -1,9 +1,18 @@
 #include "fenetre.hpp"
 #include <QPushButton>
+#include <QLineEdit>
+
 
 Fenetre::Fenetre(QWidget *parent) : QWidget(parent)
 {
     setFixedSize(600, 800);
+
+    QLineEdit *lineEdit = new QLineEdit(this);
+    lineEdit->setPlaceholderText("");
+    lineEdit->setReadOnly(true);
+    lineEdit->setGeometry(150, 150, 300, 60);
+
+
     m_boutonegal = new QPushButton("=", this);
     m_boutonegal->setGeometry(530, 700, 60, 60);
 
