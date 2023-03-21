@@ -69,4 +69,18 @@ Fenetre::Fenetre(QWidget *parent) : QWidget(parent)
 
     m_boutoneffacer= new QPushButton("Effacer", this);
     m_boutoneffacer->setGeometry(460, 420, 60, 60);
+
+    connect(m_bouton1, SIGNAL(clicked()), this, SLOT(on_bouton1_clicked()));
+    connect(m_bouton2, SIGNAL(clicked()), this, SLOT(on_bouton2_clicked()));
+
 }
+
+void Fenetre::on_bouton1_clicked()
+    {
+        lineEdit->insert("1");
+    }
+
+void Fenetre::on_bouton2_clicked()
+    {
+        lineEdit->insert("2");
+    }
