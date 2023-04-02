@@ -74,8 +74,24 @@ Fenetre::Fenetre(QWidget *parent) : QWidget(parent), lineEdit(nullptr)
 
     QObject::connect(m_bouton1, &QPushButton::released, this, &Fenetre::on_bouton1_clicked);
     QObject::connect(m_bouton2, &QPushButton::released, this, &Fenetre::on_bouton2_clicked);
+    QObject::connect(m_bouton3, &QPushButton::released, this, &Fenetre::on_bouton3_clicked);
+    QObject::connect(m_bouton4, &QPushButton::released, this, &Fenetre::on_bouton4_clicked);
+    QObject::connect(m_bouton5, &QPushButton::released, this, &Fenetre::on_bouton5_clicked);
+    QObject::connect(m_bouton6, &QPushButton::released, this, &Fenetre::on_bouton6_clicked);
+    QObject::connect(m_bouton7, &QPushButton::released, this, &Fenetre::on_bouton7_clicked);
+    QObject::connect(m_bouton8, &QPushButton::released, this, &Fenetre::on_bouton8_clicked);
+    QObject::connect(m_bouton9, &QPushButton::released, this, &Fenetre::on_bouton9_clicked);
+    QObject::connect(m_bouton0, &QPushButton::released, this, &Fenetre::on_bouton0_clicked);
+
+    QObject::connect(m_boutonclear, &QPushButton::released, this, &Fenetre::on_boutonclear_clicked);
+    QObject::connect(m_boutoneffacer, &QPushButton::released, this, &Fenetre::on_boutoneffacer_clicked);
 
     QObject::connect(m_boutonplus, &QPushButton::released, this, &Fenetre::on_boutonplus_clicked);
+    QObject::connect(m_boutonmoins, &QPushButton::released, this, &Fenetre::on_boutonmoins_clicked);
+    QObject::connect(m_boutondivise, &QPushButton::released, this, &Fenetre::on_boutondivise_clicked);
+    QObject::connect(m_boutonfois, &QPushButton::released, this, &Fenetre::on_boutonfois_clicked);
+    QObject::connect(m_boutonegal, &QPushButton::released, this, &Fenetre::on_boutonegal_clicked);
+    QObject::connect(m_boutonvirgule, &QPushButton::released, this, &Fenetre::on_boutonvirgule_clicked);
 
 
 }
@@ -90,19 +106,87 @@ void Fenetre::on_bouton2_clicked() {
     lineEdit->setText(current_text + "2");
 }
 
+void Fenetre::on_bouton3_clicked() {
+    QString current_text = lineEdit->text();
+    lineEdit->setText(current_text + "3");
+}
+
+void Fenetre::on_bouton4_clicked() {
+    QString current_text = lineEdit->text();
+    lineEdit->setText(current_text + "4");
+}
+
+void Fenetre::on_bouton5_clicked() {
+    QString current_text = lineEdit->text();
+    lineEdit->setText(current_text + "5");
+}
+
+void Fenetre::on_bouton6_clicked() {
+    QString current_text = lineEdit->text();
+    lineEdit->setText(current_text + "6");
+}
+
+void Fenetre::on_bouton7_clicked() {
+    QString current_text = lineEdit->text();
+    lineEdit->setText(current_text + "7");
+}
+
+void Fenetre::on_bouton8_clicked() {
+    QString current_text = lineEdit->text();
+    lineEdit->setText(current_text + "8");
+}
+
+void Fenetre::on_bouton9_clicked() {
+    QString current_text = lineEdit->text();
+    lineEdit->setText(current_text + "9");
+}
+
+void Fenetre::on_bouton0_clicked() {
+    QString current_text = lineEdit->text();
+    lineEdit->setText(current_text + "0");
+}
+
 void Fenetre::on_boutonplus_clicked() {
     QString current_text = lineEdit->text();
     lineEdit->setText(current_text + "+");
 }
 
+void Fenetre::on_boutonclear_clicked() {
+    QString current_text = lineEdit->text();
+    lineEdit->setText("");
+}
+
+void Fenetre::on_boutoneffacer_clicked() {
+    QString current_text = lineEdit->text();
+    current_text.chop(1);
+    lineEdit->setText(current_text);
+}
+
+void Fenetre::on_boutonmoins_clicked() {
+    QString current_text = lineEdit->text();
+    lineEdit->setText(current_text + "-");
+}
+
+void Fenetre::on_boutondivise_clicked() {
+    QString current_text = lineEdit->text();
+    lineEdit->setText(current_text + "/");
+}
+
+void Fenetre::on_boutonfois_clicked() {
+    QString current_text = lineEdit->text();
+    lineEdit->setText(current_text + "x");
+}
+
+void Fenetre::on_boutonegal_clicked() {
+    QString current_text = lineEdit->text();
+    lineEdit->setText(current_text + "=");
+}
+
+void Fenetre::on_boutonvirgule_clicked() {
+    QString current_text = lineEdit->text();
+    lineEdit->setText(current_text + ".");
+}
 void Fenetre::boutonClicked() {
     QPushButton *button = (QPushButton *)sender();
     QString buttonValue = button->text();
-
-void Fenetre::on_bouton2_clicked()
-    {
-        lineEdit->insert("2");
-    }
-
-
-
+}
