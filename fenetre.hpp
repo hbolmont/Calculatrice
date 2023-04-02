@@ -32,7 +32,9 @@ class Fenetre : public QWidget {
         void on_bouton5_clicked();
         void on_bouton7_clicked();
         void on_bouton8_clicked();
-        void boutonClicke();
+        void boutonClicked();
+        void calculate();
+
 
     private :
         QLineEdit *lineEdit;

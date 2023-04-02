@@ -75,6 +75,9 @@ Fenetre::Fenetre(QWidget *parent) : QWidget(parent), lineEdit(nullptr)
     QObject::connect(m_bouton1, &QPushButton::released, this, &Fenetre::on_bouton1_clicked);
     QObject::connect(m_bouton2, &QPushButton::released, this, &Fenetre::on_bouton2_clicked);
 
+    QObject::connect(m_boutonplus, &QPushButton::released, this, &Fenetre::on_boutonplus_clicked);
+
+
 }
 
 void Fenetre::on_bouton1_clicked() {
@@ -82,7 +85,19 @@ void Fenetre::on_bouton1_clicked() {
     lineEdit->setText(current_text + "1");
 }
 
+void Fenetre::on_bouton2_clicked() {
+    QString current_text = lineEdit->text();
+    lineEdit->setText(current_text + "2");
+}
 
+void Fenetre::on_boutonplus_clicked() {
+    QString current_text = lineEdit->text();
+    lineEdit->setText(current_text + "+");
+}
+
+void Fenetre::boutonClicked() {
+    QPushButton *button = (QPushButton *)sender();
+    QString buttonValue = button->text();
 
 void Fenetre::on_bouton2_clicked()
     {
