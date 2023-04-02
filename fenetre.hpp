@@ -1,15 +1,20 @@
 #ifndef FENETRE_HPP
 #define FENETRE_HPP
 
-#include <QWidget>
+#include <QtWidgets>
 #include <QLineEdit>
+#include <QPushButton>
+#include <QApplication>
 
 class QPushButton;
+
 class Fenetre : public QWidget {
     public :
         Fenetre(QWidget * parent = nullptr);
 
     public slots:
+        void on_bouton1_clicked();
+        void on_bouton2_clicked();
         void on_boutonplus_clicked();
         void on_boutonmoins_clicked();
         void on_boutondivise_clicked();
@@ -27,8 +32,7 @@ class Fenetre : public QWidget {
         void on_bouton5_clicked();
         void on_bouton7_clicked();
         void on_bouton8_clicked();
-        void on_bouton1_clicked();
-        void on_bouton2_clicked();
+        void boutonClicke();
 
     private :
         QLineEdit *lineEdit;

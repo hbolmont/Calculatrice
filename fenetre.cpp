@@ -3,11 +3,12 @@
 #include <QLineEdit>
 
 
-Fenetre::Fenetre(QWidget *parent) : QWidget(parent)
+Fenetre::Fenetre(QWidget *parent) : QWidget(parent), lineEdit(nullptr)
 {
     setFixedSize(600, 800);
 
-    QLineEdit *lineEdit = new QLineEdit(this);
+    lineEdit = new QLineEdit(this);
+
     lineEdit->setPlaceholderText("");
     lineEdit->setReadOnly(true);
     lineEdit->setGeometry(150, 150, 300, 60);
@@ -70,17 +71,23 @@ Fenetre::Fenetre(QWidget *parent) : QWidget(parent)
     m_boutoneffacer= new QPushButton("Effacer", this);
     m_boutoneffacer->setGeometry(460, 420, 60, 60);
 
-    connect(m_bouton1, SIGNAL(clicked()), this, SLOT(on_bouton1_clicked()));
-    connect(m_bouton2, SIGNAL(clicked()), this, SLOT(on_bouton2_clicked()));
+
+    QObject::connect(m_bouton1, &QPushButton::released, this, &Fenetre::on_bouton1_clicked);
+    QObject::connect(m_bouton2, &QPushButton::released, this, &Fenetre::on_bouton2_clicked);
 
 }
 
-void Fenetre::on_bouton1_clicked()
-    {
-        lineEdit->insert("1");
-    }
+void Fenetre::on_bouton1_clicked() {
+    QString current_text = lineEdit->text();
+    lineEdit->setText(current_text + "1");
+}
+
+
 
 void Fenetre::on_bouton2_clicked()
     {
         lineEdit->insert("2");
     }
+
+
+
